@@ -19,31 +19,34 @@ An intelligent multi-agent research system that automates academic research usin
 ### Core Components
 
 ```
-Research Agent System
-├── Agents Layer (Specialized AI Agents)
-│   ├── Research Coordinator
-│   ├── Search Specialist
-│   ├── Analyst
-│   ├── Validator
-│   ├── Synthesizer
-│   └── Writer
-│
-├── Workflow Layer (LangGraph)
-│   ├── State Management
-│   ├── Conditional Routing
-│   ├── Parallel Execution
-│   └── Checkpoint Recovery
-│
-├── Data Layer
-│   ├── Vector Database (Chroma)
-│   ├── SQLite Checkpoints
-│   ├── Search Cache
-│   └── Document Storage
-│
-└── Interface Layer
-    ├── API Endpoints
-    ├── Dashboard
-    └── Report Generation
+research_agent_project/
+├── agents/
+│   ├── base_agent.py (BaseAgent)
+│   ├── research_coordinator_agent.py (ResearchCoordinatorAgent)
+│   ├── search_specialist_agent.py (SearchSpecialistAgent)
+│   └── analyst_agent.py (AnalystAgent)
+├── core/
+│   ├── advanced_research.py (AdvancedResearch)
+│   ├── content_analyzer.py (ContentAnalyzer)
+│   ├── research_topic.py (ResearchTopic)
+│   ├── research_state.py (ResearchState)
+│   ├── agent_type.py (AgentType)
+│   └── agent_config.py (AgentConfig)
+├── graph/
+│   ├── research_assistant_graph.py (ResearchAssistantGraph)
+│   └── parallel_research_orchestrator.py (ParallelResearchOrchestrator)
+├── dashboard/
+│   └── research_dashboard.py (ResearchDashboard)
+├── utils/
+│   ├── __init__.py
+│   ├── cache.py
+│   └── validators.py
+├── logs/
+│   └── .gitkeep
+├── checkpoints/
+│   └── .gitkeep
+├── main.py (main execution)
+└── requirements.txt
 ```
 
 
