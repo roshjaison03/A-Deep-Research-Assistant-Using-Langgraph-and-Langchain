@@ -247,5 +247,8 @@ This project welcomes contributions in:
 - Performance optimizations
 - Documentation improvements
 
+<img src="output_images/Screenshot 2026-01-28 032909.png" width="1000"/>
+<img src="output_images/Screenshot 2026-01-28 032858.png" width="1000"/>
+<img src="output_images/Screenshot 2026-01-28 032837.png" width="1000"/>
 
 '''
