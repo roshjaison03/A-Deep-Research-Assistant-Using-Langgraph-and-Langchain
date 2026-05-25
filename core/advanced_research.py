@@ -13,12 +13,12 @@ class AdvancedResearch:
     self.cache = {}
 
   def search_with_cache(self,query:str,max_results:int=5) -> Dict[str,any]:
-    cache_key = hashlib.md5(query.encode()).hexdigest() # Corrected from m5 to md5
+    cache_key = hashlib.md5(query.encode()).hexdigest() 
     if cache_key in self.cache:
       return self.cache[cache_key]
 
     try:
-      with ThreadPoolExecutor(max_workers=3) as executor: # Corrected typo: ThreadPoolEcecutor -> ThreadPoolExecutor
+      with ThreadPoolExecutor(max_workers=3) as executor:
         futures=[
             executor.submit(self._web_search,query,max_results),
             executor.submit(self._arxiv_search,query,max_results),
@@ -38,7 +38,7 @@ class AdvancedResearch:
       }
       self.cache[cache_key]=result_dict
       return result_dict
-    except Exception as e: # Added missing except block
+    except Exception as e:
       print(f"An error occurred in search_with_cache: {e}")
       return {
           "query": query,
@@ -73,7 +73,7 @@ class AdvancedResearch:
         except:
             return []
 
-  def _scholar_search(self, query: str, max_results: int) -> List[Dict]: # Corrected indentation
+  def _scholar_search(self, query: str, max_results: int) -> List[Dict]: 
         """Mock scholar search (replace with actual API)"""
         return [{
             "source": "scholar",
@@ -90,5 +90,5 @@ class AdvancedResearch:
       content_hash = hashlib.md5(str(result.get('title','') + result.get('content', '')).encode()).hexdigest()
       if content_hash not in seen:
         seen.add(content_hash)
-        unique.append(result) # Corrected: append result, not hash
+        unique.append(result) # 
     return unique
