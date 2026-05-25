@@ -18,15 +18,15 @@ class ResearchAssistantGraph:
     """Main research assistant graph with complex workflow"""
 
     def __init__(self):
-        # Correctly instantiate AsyncSqliteSaver with an aiosqlite connection
+        
         self.memory = AsyncSqliteSaver(conn=aiosqlite.connect("research_checkpoints.db"))
         self.agents = self._initialize_agents()
         self.graph = self._build_graph()
         self.app = self._compile_graph()
 
-    def _initialize_agents(self) -> Dict[str, Any]:  # Changed from AgentType to str
+    def _initialize_agents(self) -> Dict[str, Any]:
         """Initialize all specialized agents"""
-        # Assuming these agent classes are defined elsewhere
+      
         return {
             "research_coordinator": ResearchCoordinatorAgent(),
             "search_specialist": SearchSpecialistAgent(),
